@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Product Editor — CASA DECOR Admin</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="stylesheet" href="../assets/css/admin.css" />
+</head>
+
+<body class="admin" data-admin-page="product-editor">
+  <div class="adminLayout">
+    <aside id="adminSidebar"></aside>
+
+    <div class="adminMain">
+      <header id="adminTopbar"></header>
+
+      <main class="adminContent">
+        <div class="pageHead">
+          <div>
+            <h1 data-editor-title>Product Editor</h1>
+            <p class="muted" data-editor-subtitle>Create or edit a product. Images are stored in Supabase Storage.</p>
+          </div>
+          <div class="pageHead__actions">
+            <a class="btn btn--secondary" href="./products.html">Back</a>
+            <a class="btn btn--secondary" href="#" data-preview hidden>Preview</a>
+            <button class="btn btn--primary" type="button" data-save>Save</button>
+          </div>
+        </div>
+
+        <div class="notice notice--error" data-load-error hidden></div>
+
+        <section class="grid2 grid2--editor">
+          <!-- LEFT: FORM -->
+          <section class="panel">
+            <div class="panelHead">
+              <div>
+                <div class="panelTitle">Product details</div>
+                <div class="panelSub muted">Fields map directly to the database schema.</div>
+              </div>
+            </div>
+
+            <div class="panelBody">
+              <form class="form" id="productForm">
+                <input type="hidden" id="productId" />
+
+                <details open class="formSection">
+                  <summary>Basic Information</summary>
+                  <div class="formGrid">
+                    <div class="field">
+                      <label for="name">Name *</label>
+                      <input id="name" required />
+                    </div>
+                    <div class="field">
+                      <label for="slug">Slug *</label>
+                      <div class="inputRow">
+                        <input id="slug" required />
+                        <button class="btn btn--secondary btn--sm" type="button" data-slugify>Generate</button>
+                      </div>
+                      <div class="help muted">Example: <code>panel-bed</code> (used in product URL)</div>
+                    </div>
+                    <div class="field">
+                      <label for="category">Category *</label>
+                      <select id="category" required>
+                        <option value="" disabled selected>Select…</option>
+                      </select>
+                    </div>
+                    <div class="field">
+                      <label for="availability">Availability</label>
+                      <select id="availability">
+                        <option value="in_stock">In stock</option>
+                        <option value="made_to_order">Made to order</option>
+                        <option value="limited">Limited availability</option>
+                        <option value="out_of_stock">Out of stock</option>
+                      </select>
+                    </div>
+                    <div class="field">
+                      <label for="short_description">Short description</label>
+                      <textarea id="short_description" rows="3" placeholder="A refined one-liner for cards and previews."></textarea>
+                    </div>
+                  </div>
+                </details>
+
+                <details open class="formSection">
+                  <summary>Pricing</summary>
+                  <div class="formGrid">
+                    <div class="field">
+                      <label for="currency">Currency</label>
+                      <select id="currency">
+                        <option value="PKR">PKR</option>
+                      </select>
+                    </div>
+                    <div class="field">
+                      <label for="price">Regular price *</label>
+                      <input id="price" type="number" min="0" step="1" required />
+                    </div>
+                    <div class="field">
+                      <label for="sale_price">Sale price</label>
+                      <input id="sale_price" type="number" min="0" step="1" />
+                    </div>
+                    <div class="field">
+                      <label for="sale_start">Sale start</label>
+                      <input id="sale_start" type="datetime-local" />
+                    </div>
+                    <div class="field">
+                      <label for="sale_end">Sale end</label>
+                      <input id="sale_end" type="datetime-local" />
+                    </div>
+
+                    <div class="field">
+                      <label for="pricing_components">Pricing components (optional JSON)</label>
+                      <textarea id="pricing_components" rows="4" placeholder='Example: [{"label":"Coffee Chairs","price":65000},{"label":"Coffee Table","price":30000}]'></textarea>
+                      <div class="help muted">For products that have multiple priced components (e.g., chairs + table).</div>
+                    </div>
+                  </div>
+                </details>
+
+                <details class="formSection">
+                  <summary>Description</summary>
+                  <div class="field">
+                    <label for="description">Full description</label>
+                    <textarea id="description" rows="8" placeholder="Use clear lines. Separate paragraphs with blank lines."></textarea>
+                  </div>
+                </details>
+
+                <details class="formSection">
+                  <summary>Specifications</summary>
+                  <div class="formGrid">
+                    <div class="field">
+                      <label for="dimensions">Dimensions</label>
+                      <input id="dimensions" placeholder='Example: 7.5 ft × 9 ft' />
+                    </div>
+                    <div class="field">
+                      <label for="warranty">Warranty</label>
+                      <input id="warranty" placeholder="Example: 10-year warranty" />
+                    </div>
+                  </div>
+                </details>
+
+                <details class="formSection">
+                  <summary>Customization</summary>
+                  <div class="formGrid">
+                    <div class="field">
+                      <label for="fabric_options">Fabric options (comma-separated)</label>
+                      <input id="fabric_options" placeholder="Example: Velvet, Linen, Suede" />
+                    </div>
+                    <div class="field">
+                      <label for="color_options">Color options (comma-separated)</label>
+                      <input id="color_options" placeholder="Example: Beige, Charcoal, Ivory" />
+                    </div>
+                    <div class="field">
+                      <label for="marble_options">Marble options (comma-separated)</label>
+                      <input id="marble_options" placeholder="Example: White, Black, Emperador" />
+                    </div>
+                  </div>
+                </details>
+
+                <details class="formSection">
+                  <summary>SEO</summary>
+                  <div class="formGrid">
+                    <div class="field">
+                      <label for="seo_title">SEO title</label>
+                      <input id="seo_title" placeholder="Optional. Defaults to product name." />
+                    </div>
+                    <div class="field">
+                      <label for="seo_description">SEO description</label>
+                      <textarea id="seo_description" rows="3" placeholder="Optional. Defaults to short description."></textarea>
+                    </div>
+                  </div>
+                </details>
+
+                <details open class="formSection">
+                  <summary>Publishing</summary>
+                  <div class="formGrid">
+                    <div class="field field--inline">
+                      <label class="check">
+                        <input id="featured" type="checkbox" />
+                        <span>Featured</span>
+                      </label>
+                    </div>
+                    <div class="field field--inline">
+                      <label class="check">
+                        <input id="published" type="checkbox" />
+                        <span>Published</span>
+                      </label>
+                    </div>
+                  </div>
+                </details>
+
+                <div class="formActions">
+                  <button class="btn btn--primary" type="button" data-save-bottom>Save Product</button>
+                  <button class="btn btn--danger" type="button" data-delete hidden>Delete</button>
+                </div>
+
+                <div class="notice notice--success" data-saved hidden>Saved successfully.</div>
+                <div class="notice notice--error" data-save-error hidden></div>
+              </form>
+            </div>
+          </section>
+
+          <!-- RIGHT: IMAGES -->
+          <section class="panel">
+            <div class="panelHead">
+              <div>
+                <div class="panelTitle">Images</div>
+                <div class="panelSub muted">Upload multiple images. Set a primary image. Reorder anytime.</div>
+              </div>
+            </div>
+
+            <div class="panelBody">
+              <div class="uploadBox">
+                <input id="imageInput" type="file" accept="image/*" multiple />
+                <div class="muted small">
+                  Tip: Use high-quality images. Max 8MB per file. JPG/PNG/WebP.
+                </div>
+                <button class="btn btn--secondary" type="button" data-upload disabled>Upload selected</button>
+              </div>
+
+              <div class="notice notice--info" data-image-hint>
+                Save the product first to enable uploads.
+              </div>
+
+              <div class="imageList" data-image-list>
+                <!-- populated -->
+              </div>
+
+              <div class="notice notice--error" data-image-error hidden></div>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <div class="modal" data-modal hidden>
+    <div class="modal__backdrop" data-modal-close></div>
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-label="Confirm action">
+      <div class="modal__head">
+        <div class="modal__title" data-modal-title>Confirm</div>
+        <button class="iconBtn" type="button" data-modal-close aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal__body" data-modal-body></div>
+      <div class="modal__foot">
+        <button class="btn btn--secondary" type="button" data-modal-cancel>Cancel</button>
+        <button class="btn btn--danger" type="button" data-modal-confirm>Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toasts" id="adminToastMount" aria-live="polite"></div>
+
+  <script type="module" src="../assets/js/admin.js"></script>
+  <script type="module" src="../assets/js/products-admin.js"></script>
+</body>
+</html>

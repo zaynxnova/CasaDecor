@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard — CASA DECOR Admin</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="stylesheet" href="../assets/css/admin.css" />
+</head>
+
+<body class="admin" data-admin-page="dashboard">
+  <div class="adminLayout">
+    <aside id="adminSidebar"></aside>
+
+    <div class="adminMain">
+      <header id="adminTopbar"></header>
+
+      <main class="adminContent">
+        <div class="pageHead">
+          <div>
+            <h1>Dashboard</h1>
+            <p class="muted">Overview of products, offers, and inquiries.</p>
+          </div>
+          <div class="pageHead__actions">
+            <a class="btn btn--secondary" href="./product-editor.html">Add Product</a>
+            <a class="btn btn--primary" href="./inquiries.html">View Inquiries</a>
+          </div>
+        </div>
+
+        <section class="kpiGrid" aria-label="Dashboard metrics">
+          <div class="kpiCard"><div class="kpiLabel">Total Products</div><div class="kpiValue" data-kpi="products">—</div></div>
+          <div class="kpiCard"><div class="kpiLabel">Published Products</div><div class="kpiValue" data-kpi="published_products">—</div></div>
+          <div class="kpiCard"><div class="kpiLabel">Featured Products</div><div class="kpiValue" data-kpi="featured_products">—</div></div>
+          <div class="kpiCard"><div class="kpiLabel">Active Offers</div><div class="kpiValue" data-kpi="active_offers">—</div></div>
+          <div class="kpiCard"><div class="kpiLabel">Total Inquiries</div><div class="kpiValue" data-kpi="inquiries">—</div></div>
+          <div class="kpiCard"><div class="kpiLabel">Unread (New)</div><div class="kpiValue" data-kpi="unread_inquiries">—</div></div>
+        </section>
+
+        <section class="grid2">
+          <div class="panel">
+            <div class="panelHead">
+              <div>
+                <div class="panelTitle">Recent inquiries</div>
+                <div class="panelSub muted">Latest messages submitted from the website.</div>
+              </div>
+              <a class="textLink" href="./inquiries.html">Open</a>
+            </div>
+            <div class="panelBody">
+              <div class="tableWrap">
+                <table class="table" aria-label="Recent inquiries">
+                  <thead>
+                    <tr>
+                      <th>Customer</th>
+                      <th>Interested In</th>
+                      <th>Status</th>
+                      <th>Date</th>
+                    </tr>
+                  </thead>
+                  <tbody data-recent-inquiries>
+                    <tr><td colspan="4" class="muted">Loading…</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panelHead">
+              <div>
+                <div class="panelTitle">Recently added products</div>
+                <div class="panelSub muted">Latest products created in the admin.</div>
+              </div>
+              <a class="textLink" href="./products.html">Open</a>
+            </div>
+            <div class="panelBody">
+              <div class="tableWrap">
+                <table class="table" aria-label="Recent products">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Category</th>
+                      <th>Published</th>
+                      <th>Created</th>
+                    </tr>
+                  </thead>
+                  <tbody data-recent-products>
+                    <tr><td colspan="4" class="muted">Loading…</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="notice notice--info" data-admin-rls-hint hidden>
+          You are signed in but do not have admin permissions. Check <code>profiles.role</code> and RLS policies.
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <div class="toasts" id="adminToastMount" aria-live="polite"></div>
+
+  <script type="module" src="../assets/js/admin.js"></script>
+</body>
+</html>

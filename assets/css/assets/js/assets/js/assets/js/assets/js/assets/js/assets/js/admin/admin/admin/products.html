@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Products — CASA DECOR Admin</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="stylesheet" href="../assets/css/admin.css" />
+</head>
+
+<body class="admin" data-admin-page="products">
+  <div class="adminLayout">
+    <aside id="adminSidebar"></aside>
+
+    <div class="adminMain">
+      <header id="adminTopbar"></header>
+
+      <main class="adminContent">
+        <div class="pageHead">
+          <div>
+            <h1>Products</h1>
+            <p class="muted">Create, edit, publish/hide, feature and manage pricing and images.</p>
+          </div>
+          <div class="pageHead__actions">
+            <a class="btn btn--primary" href="./product-editor.html">Add Product</a>
+          </div>
+        </div>
+
+        <section class="panel">
+          <div class="panelHead panelHead--stack">
+            <div class="filters">
+              <div class="field">
+                <label for="q">Search</label>
+                <input id="q" type="search" placeholder="Search by name / slug…" />
+              </div>
+
+              <div class="field">
+                <label for="cat">Category</label>
+                <select id="cat">
+                  <option value="">All</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="pub">Publishing</label>
+                <select id="pub">
+                  <option value="">All</option>
+                  <option value="published">Published</option>
+                  <option value="hidden">Hidden</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="feat">Featured</label>
+                <select id="feat">
+                  <option value="">All</option>
+                  <option value="featured">Featured</option>
+                  <option value="not_featured">Not featured</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="panelHead__meta">
+              <div class="pill"><span class="muted">Results</span> <strong data-count>—</strong></div>
+              <button class="btn btn--secondary" type="button" data-refresh>Refresh</button>
+            </div>
+          </div>
+
+          <div class="panelBody">
+            <div class="tableWrap">
+              <table class="table" aria-label="Products table">
+                <thead>
+                  <tr>
+                    <th style="width:32%">Product</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Sale</th>
+                    <th>Featured</th>
+                    <th>Published</th>
+                    <th style="width:22%">Actions</th>
+                  </tr>
+                </thead>
+                <tbody data-products-tbody>
+                  <tr><td colspan="7" class="muted">Loading…</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="notice notice--error" data-error hidden></div>
+            <div class="notice notice--info" data-empty hidden>No products found.</div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <div class="modal" data-modal hidden>
+    <div class="modal__backdrop" data-modal-close></div>
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-label="Confirm action">
+      <div class="modal__head">
+        <div class="modal__title" data-modal-title>Confirm</div>
+        <button class="iconBtn" type="button" data-modal-close aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal__body" data-modal-body></div>
+      <div class="modal__foot">
+        <button class="btn btn--secondary" type="button" data-modal-cancel>Cancel</button>
+        <button class="btn btn--danger" type="button" data-modal-confirm>Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toasts" id="adminToastMount" aria-live="polite"></div>
+
+  <script type="module" src="../assets/js/admin.js"></script>
+  <script type="module" src="../assets/js/products-admin.js"></script>
+</body>
+</html>

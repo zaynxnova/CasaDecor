@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — CASA DECOR</title>
+  <meta name="description" content="Contact Casa Decor in Bahria Town, Karachi. Send an inquiry for furniture, customization, or complete home decoration & interior solutions." />
+  <meta name="theme-color" content="#070708" />
+  <link rel="canonical" href="" data-canonical />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body class="theme-dark" data-page="contact">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header id="siteHeaderMount"></header>
+
+  <main id="main">
+    <section class="pageHero">
+      <div class="container">
+        <p class="eyebrow">CONTACT</p>
+        <h1 class="h1">Let’s plan your space.</h1>
+        <p class="lead">Send an inquiry for furniture, customization, or complete home decoration & interior solutions.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid grid--2 grid--center">
+        <div class="contactPanel" data-animate>
+          <h2 class="h2">CASA DECOR</h2>
+          <p class="muted">
+            <span data-setting="address_full">Present 19, Shop number 25, Shopping Gallery, Bahria Town, Karachi, Pakistan</span>
+          </p>
+
+          <div class="contactRows">
+            <div class="contactRow">
+              <div class="contactRow__label">Phone</div>
+              <div class="contactRow__value" data-setting="phone_placeholder">Set in Admin → Settings</div>
+            </div>
+            <div class="contactRow">
+              <div class="contactRow__label">WhatsApp</div>
+              <div class="contactRow__value" data-setting="whatsapp_placeholder">Set in Admin → Settings</div>
+            </div>
+            <div class="contactRow">
+              <div class="contactRow__label">Email</div>
+              <div class="contactRow__value" data-setting="email_placeholder">Set in Admin → Settings</div>
+            </div>
+          </div>
+
+          <div class="socialRow" aria-label="Social links">
+            <a class="socialLink" href="#" data-social="instagram" aria-label="Instagram (set in settings)">Instagram</a>
+            <a class="socialLink" href="#" data-social="facebook" aria-label="Facebook (set in settings)">Facebook</a>
+            <a class="socialLink" href="#" data-social="tiktok" aria-label="TikTok (set in settings)">TikTok</a>
+          </div>
+
+          <div class="spacer-16"></div>
+          <button class="btn btn--secondary" type="button" data-whatsapp-cta hidden>WhatsApp Us</button>
+          <p class="muted small">WhatsApp appears after configuration in Admin → Settings.</p>
+        </div>
+
+        <div class="formPanel" data-animate>
+          <h2 class="h2">Send Inquiry</h2>
+          <p class="muted">We’ll review your message and respond via your preferred contact method.</p>
+
+          <form class="form" id="contactForm">
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" autocomplete="tel" required />
+            </div>
+            <div class="field">
+              <label for="email">Email (optional)</label>
+              <input id="email" name="email" type="email" autocomplete="email" />
+            </div>
+            <div class="field">
+              <label for="interested">Interested In</label>
+              <select id="interested" name="interested_in" required>
+                <option value="" selected disabled>Select…</option>
+                <option>Complete Home Decoration</option>
+                <option>Furniture</option>
+                <option>Sofas</option>
+                <option>Dining</option>
+                <option>Beds</option>
+                <option>Flooring</option>
+                <option>Wall Panels</option>
+                <option>Ceilings</option>
+                <option>TV / Media Walls</option>
+                <option>Electrical Fittings</option>
+                <option>Nets & Blackouts</option>
+                <option>Customization</option>
+                <option>Consultation</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Share details (dimensions, style direction, materials, timeline, etc.)."></textarea>
+            </div>
+
+            <button class="btn btn--primary btn--full" type="submit">Send Inquiry</button>
+
+            <div class="notice notice--success" id="contactSuccess" hidden>
+              Inquiry submitted successfully.
+            </div>
+            <div class="notice notice--error" id="contactError" hidden></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="siteFooterMount"></footer>
+  <div class="toasts" id="toastMount" aria-live="polite" aria-relevant="additions"></div>
+
+  <script type="module" src="./assets/js/main.js"></script>
+  <script type="module" src="./assets/js/contact.js"></script>
+</body>
+</html>

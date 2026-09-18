@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Login — CASA DECOR</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="stylesheet" href="../assets/css/admin.css" />
+</head>
+
+<body class="admin" data-admin-page="login">
+  <main class="authWrap">
+    <section class="authCard" aria-label="Admin login">
+      <div class="authBrand">
+        <div class="authLogo">CASA DECOR</div>
+        <div class="authSub">Admin Console</div>
+      </div>
+
+      <div class="authHint">
+        Sign in with your Supabase Auth email/password. Admin permissions are enforced by database policies.
+      </div>
+
+      <form id="loginForm" class="form">
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required />
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" required />
+        </div>
+
+        <button class="btn btn--primary btn--full" type="submit">Sign In</button>
+
+        <div class="notice notice--error" id="loginError" hidden></div>
+        <div class="notice notice--info">
+          Supabase not configured? Set URL + anon key in <code>assets/js/config.js</code>.
+        </div>
+      </form>
+
+      <div class="authFooter">
+        <a class="textLink" href="../index.html">Back to website</a>
+      </div>
+    </section>
+  </main>
+
+  <div class="toasts" id="adminToastMount" aria-live="polite"></div>
+
+  <script type="module" src="../assets/js/admin.js"></script>
+</body>
+</html>

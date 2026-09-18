@@ -1,1 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Collection — CASA DECOR</title>
+  <meta name="description" content="Browse Casa Decor’s curated collection of furniture and complete home-decoration solutions. Filter by category, search, and explore product details." />
+  <meta name="theme-color" content="#070708" />
 
+  <link rel="canonical" href="" data-canonical />
+  <meta property="og:title" content="Collection — CASA DECOR" />
+  <meta property="og:description" content="Curated furniture and interior solutions." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="./assets/images/placeholder-hero.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body class="theme-dark" data-page="shop">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header id="siteHeaderMount"></header>
+
+  <main id="main">
+    <section class="pageHero">
+      <div class="container">
+        <p class="eyebrow">COLLECTION</p>
+        <h1 class="h1">Curated pieces.<br/>Showroom finish.</h1>
+        <p class="lead">
+          Search, filter and explore. Prices and availability are maintained by the showroom.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container">
+        <div class="shopTools" role="region" aria-label="Shop filters">
+          <div class="shopTools__left">
+            <div class="searchField">
+              <label class="srOnly" for="q">Search products</label>
+              <input id="q" type="search" placeholder="Search by name, category or description…" autocomplete="off" />
+              <button class="iconBtn" type="button" data-clear-search aria-label="Clear search">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+
+            <div class="filterRow">
+              <div class="field">
+                <label for="cat">Category</label>
+                <select id="cat">
+                  <option value="">All</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="sort">Sort</label>
+                <select id="sort">
+                  <option value="featured">Featured first</option>
+                  <option value="newest">Newest</option>
+                  <option value="price_asc">Price (low → high)</option>
+                  <option value="price_desc">Price (high → low)</option>
+                </select>
+              </div>
+
+              <div class="field field--inline">
+                <label class="check">
+                  <input id="onlyFeatured" type="checkbox" />
+                  <span>Featured</span>
+                </label>
+              </div>
+
+              <div class="field field--inline">
+                <label class="check">
+                  <input id="onlyAvailable" type="checkbox" />
+                  <span>Available</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="shopTools__right">
+            <div class="resultMeta">
+              <span class="muted">Results:</span> <strong data-result-count>—</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="notice notice--error" data-shop-error hidden></div>
+        <div class="notice notice--info" data-shop-empty hidden>No products found.</div>
+
+        <div class="productGrid" data-product-grid aria-live="polite">
+          <!-- populated by JS -->
+          <div class="skeletonCard" aria-hidden="true"></div>
+          <div class="skeletonCard" aria-hidden="true"></div>
+          <div class="skeletonCard" aria-hidden="true"></div>
+          <div class="skeletonCard" aria-hidden="true"></div>
+          <div class="skeletonCard" aria-hidden="true"></div>
+          <div class="skeletonCard" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="siteFooterMount"></footer>
+
+  <div class="toasts" id="toastMount" aria-live="polite" aria-relevant="additions"></div>
+
+  <script type="module" src="./assets/js/main.js"></script>
+  <script type="module" src="./assets/js/shop.js"></script>
+</body>
+</html>

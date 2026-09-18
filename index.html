@@ -1,223 +1,441 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CASA DECOR — Complete Home Decoration & Interior Solutions</title>
+  <meta name="description" content="Luxury furniture and complete home-decoration solutions—furniture, flooring, wall panels, ceilings, and finishing—beautifully brought together under one roof." />
+  <meta name="theme-color" content="#070708" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="" data-canonical />
+  <meta property="og:title" content="CASA DECOR — Complete Home Decoration & Interior Solutions" />
+  <meta property="og:description" content="Everything Your Home Needs. Under One Roof." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="./assets/images/placeholder-hero.svg" data-og-image />
+  <meta name="twitter:card" content="summary_large_image" />
 
-    <title>Casa Decor | Complete Home Decoration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Luxury heading + clean UI body -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <meta name="description"
-          content="Casa Decor — Premium furniture, flooring, wall panels, ceilings and complete home decoration solutions.">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #0b0b0b;
-            color: #f5f0e8;
-        }
-
-        header {
-            padding: 25px 6%;
-            border-bottom: 1px solid #2a2a2a;
-        }
-
-        .logo {
-            font-size: 28px;
-            letter-spacing: 4px;
-            font-weight: 700;
-        }
-
-        .hero {
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 60px 20px;
-        }
-
-        .hero-content {
-            max-width: 850px;
-        }
-
-        .hero small {
-            letter-spacing: 5px;
-            color: #c8a96b;
-        }
-
-        .hero h1 {
-            font-size: clamp(45px, 8vw, 90px);
-            margin: 25px 0;
-            line-height: 1;
-        }
-
-        .hero p {
-            color: #bdb7ae;
-            font-size: 18px;
-            line-height: 1.7;
-            max-width: 650px;
-            margin: auto;
-        }
-
-        .btn {
-            display: inline-block;
-            margin-top: 35px;
-            padding: 15px 30px;
-            border: 1px solid #c8a96b;
-            color: #c8a96b;
-            text-decoration: none;
-            letter-spacing: 2px;
-        }
-
-        .section {
-            padding: 80px 6%;
-            text-align: center;
-        }
-
-        .section h2 {
-            font-size: 40px;
-            margin-bottom: 15px;
-        }
-
-        .section p {
-            color: #aaa;
-        }
-
-        .categories {
-            margin-top: 45px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 18px;
-        }
-
-        .category {
-            padding: 35px 20px;
-            border: 1px solid #292929;
-            background: #111;
-            transition: 0.3s;
-        }
-
-        .category:hover {
-            border-color: #c8a96b;
-            transform: translateY(-5px);
-        }
-
-        .category h3 {
-            color: #f5f0e8;
-            font-size: 18px;
-        }
-
-        footer {
-            padding: 35px 6%;
-            text-align: center;
-            border-top: 1px solid #292929;
-            color: #777;
-        }
-    </style>
+  <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
-<body>
+<body class="theme-dark" data-page="home">
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <header>
-        <div class="logo">CASA DECOR</div>
-    </header>
+  <header id="siteHeaderMount"></header>
 
-    <main>
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" aria-label="Casa Decor hero">
+      <div class="hero__media" role="img" aria-label="Luxury interior hero image">
+        <!-- set via settings in JS; fallback uses placeholder -->
+        <img class="hero__img" src="./assets/images/placeholder-hero.svg" alt="Casa Decor luxury interiors" data-hero-image loading="eager" />
+        <div class="hero__overlay" aria-hidden="true"></div>
+      </div>
 
-        <section class="hero">
+      <div class="hero__content container">
+        <p class="eyebrow" data-hero-eyebrow>INTERIORS • FURNITURE • DECOR</p>
+        <h1 class="hero__title" data-hero-title>Complete Home<br/>Decoration</h1>
+        <p class="hero__subtitle" data-hero-subtitle>
+          Premium furniture, flooring, wall panels, ceilings and complete interior solutions — beautifully brought together under one roof.
+        </p>
 
-            <div class="hero-content">
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="./shop.html">Explore Collection</a>
+          <button class="btn btn--secondary" type="button" data-open-consultation>
+            Book a Consultation
+          </button>
+        </div>
 
-                <small>INTERIORS • FURNITURE • DECOR</small>
+        <div class="hero__meta">
+          <div class="hero__metaCard">
+            <div class="hero__metaKicker">Showroom</div>
+            <div class="hero__metaValue" data-setting="address_short">Bahria Town, Karachi</div>
+          </div>
+          <div class="hero__metaCard">
+            <div class="hero__metaKicker">Concept</div>
+            <div class="hero__metaValue">One Roof, Complete Home</div>
+          </div>
+          <div class="hero__metaCard">
+            <div class="hero__metaKicker">Customization</div>
+            <div class="hero__metaValue">Fabric • Color • Marble</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-                <h1>
-                    Complete Home<br>
-                    Decoration
-                </h1>
+    <!-- BRAND INTRO -->
+    <section class="section section--tight">
+      <div class="container grid grid--2">
+        <div>
+          <h2 class="h2" data-animate>CASA DECOR</h2>
+          <p class="lead" data-animate>
+            Casa Decor is a complete home-decoration & interior solutions showroom—bringing furniture, flooring, wall panels, ceilings,
+            lighting integration and finishing elements together in one refined experience.
+          </p>
+          <div class="divider divider--gold" aria-hidden="true"></div>
+          <ul class="pillList" data-animate>
+            <li>Furniture & Custom Pieces</li>
+            <li>Flooring (Wood / Marble)</li>
+            <li>Decorative Wall Panels & Media Walls</li>
+            <li>Ceiling Designs & Lighting Integration</li>
+            <li>Electrical Home Fittings</li>
+            <li>Nets & Blackouts</li>
+          </ul>
+        </div>
 
-                <p>
-                    Premium furniture, flooring, wall panels,
-                    ceilings and complete interior solutions —
-                    beautifully brought together under one roof.
-                </p>
-
-                <a href="#categories" class="btn">
-                    EXPLORE COLLECTION
-                </a>
-
+        <div class="editorialCard" data-animate>
+          <img class="editorialCard__img" src="./assets/images/placeholder-service.svg" alt="Interior finishing details" loading="lazy" />
+          <div class="editorialCard__content">
+            <div class="editorialCard__kicker">Positioning</div>
+            <div class="editorialCard__title">Complete Home Decoration & Interior Solutions</div>
+            <div class="editorialCard__text">
+              A luxury showroom approach—curated, architectural, and consultation-led.
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        </section>
+    <!-- FEATURED COLLECTIONS (CATEGORIES) -->
+    <section class="section">
+      <div class="container">
+        <div class="sectionHeader">
+          <h2 class="h2" data-animate>Featured Collections</h2>
+          <p class="muted" data-animate>Explore categories across furniture and interior solutions.</p>
+        </div>
 
+        <div class="categoryGrid" data-category-grid>
+          <!-- populated from Supabase -->
+          <div class="skeletonCard" aria-hidden="true"></div>
+          <div class="skeletonCard" aria-hidden="true"></div>
+          <div class="skeletonCard" aria-hidden="true"></div>
+          <div class="skeletonCard" aria-hidden="true"></div>
+        </div>
 
-        <section class="section" id="categories">
+        <div class="sectionFooter" data-animate>
+          <a class="textLink" href="./shop.html">Browse the full collection</a>
+        </div>
+      </div>
+    </section>
 
-            <h2>Our World</h2>
+    <!-- FURNITURE SHOWCASE -->
+    <section class="section section--contrast">
+      <div class="container grid grid--2 grid--center">
+        <div data-animate>
+          <h2 class="h2">Furniture, with a showroom finish.</h2>
+          <p class="muted">
+            Sofas, dining, beds, consoles, tables and mirrors—selected and presented with an emphasis on proportions, materials and detail.
+          </p>
+          <div class="featureList">
+            <div class="feature">
+              <div class="feature__title">Premium Materials</div>
+              <div class="feature__text">Wood, marble, glass and fabric options chosen for long-term elegance.</div>
+            </div>
+            <div class="feature">
+              <div class="feature__title">Customization</div>
+              <div class="feature__text">Fabric, colors, marble, and dimensions—tailored to your space.</div>
+            </div>
+          </div>
+          <div class="spacer-16"></div>
+          <a class="btn btn--ghost" href="./shop.html">Explore Furniture</a>
+        </div>
 
-            <p>
-                Everything you need to transform your home.
+        <div class="imagePanel" data-animate>
+          <img src="./assets/images/placeholder-product.svg" alt="Luxury furniture vignette" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPLETE HOME DECORATION (KEY SECTION) -->
+    <section class="section">
+      <div class="container">
+        <div class="completeHome" data-animate>
+          <div class="completeHome__content">
+            <h2 class="h1">Everything Your Home Needs.<br/>Under One Roof.</h2>
+            <p class="lead">
+              From furniture and flooring to walls, ceilings, lighting and finishing touches, Casa Decor brings complete home decoration solutions together—
+              so you can plan with clarity and build with confidence.
             </p>
 
-            <div class="categories">
-
-                <div class="category">
-                    <h3>Furniture</h3>
-                </div>
-
-                <div class="category">
-                    <h3>Flooring</h3>
-                </div>
-
-                <div class="category">
-                    <h3>Wall Panels</h3>
-                </div>
-
-                <div class="category">
-                    <h3>Ceilings</h3>
-                </div>
-
-                <div class="category">
-                    <h3>Dining</h3>
-                </div>
-
-                <div class="category">
-                    <h3>Tables</h3>
-                </div>
-
-                <div class="category">
-                    <h3>TV Consoles</h3>
-                </div>
-
-                <div class="category">
-                    <h3>Mirrors</h3>
-                </div>
-
-                <div class="category">
-                    <h3>Nets & Blackouts</h3>
-                </div>
-
-                <div class="category">
-                    <h3>Electrical Fittings</h3>
-                </div>
-
+            <div class="journey">
+              <div class="journey__item">Furniture</div>
+              <div class="journey__plus" aria-hidden="true">+</div>
+              <div class="journey__item">Flooring</div>
+              <div class="journey__plus" aria-hidden="true">+</div>
+              <div class="journey__item">Walls</div>
+              <div class="journey__plus" aria-hidden="true">+</div>
+              <div class="journey__item">Ceilings</div>
+              <div class="journey__plus" aria-hidden="true">+</div>
+              <div class="journey__item">Lighting</div>
+              <div class="journey__plus" aria-hidden="true">+</div>
+              <div class="journey__item">Decor</div>
             </div>
 
-        </section>
+            <div class="spacer-16"></div>
+            <button class="btn btn--primary" type="button" data-open-consultation>Plan Your Home</button>
+          </div>
 
-    </main>
+          <div class="completeHome__media" aria-hidden="true">
+            <img src="./assets/images/placeholder-hero.svg" alt="" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- SERVICES -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="sectionHeader">
+          <h2 class="h2" data-animate>Services</h2>
+          <p class="muted" data-animate>Complete interior solutions—planned, executed and finished with a premium standard.</p>
+        </div>
 
-    <footer>
-        © 2026 CASA DECOR — Complete Home Decoration
-    </footer>
+        <div class="serviceGrid" data-animate>
+          <!-- Static list (copy is premium); images replaceable later via admin image tools -->
+          <article class="serviceCard">
+            <img src="./assets/images/placeholder-service.svg" alt="Complete home decoration" loading="lazy" />
+            <h3>Complete Home Decoration</h3>
+            <p>End-to-end planning and finishing for a cohesive home.</p>
+          </article>
+          <article class="serviceCard">
+            <img src="./assets/images/placeholder-service.svg" alt="Flooring solutions" loading="lazy" />
+            <h3>Flooring</h3>
+            <p>Wood and marble flooring options selected for durability and elegance.</p>
+          </article>
+          <article class="serviceCard">
+            <img src="./assets/images/placeholder-service.svg" alt="Wall panels and feature walls" loading="lazy" />
+            <h3>Wall Panels & Feature Walls</h3>
+            <p>Decorative wall panels, TV/media walls and architectural focal points.</p>
+          </article>
+          <article class="serviceCard">
+            <img src="./assets/images/placeholder-service.svg" alt="Ceiling designs and lighting integration" loading="lazy" />
+            <h3>Ceiling Work</h3>
+            <p>False ceilings, ceiling detailing and lighting integration.</p>
+          </article>
+        </div>
 
+        <div class="sectionFooter" data-animate>
+          <a class="textLink" href="./services.html">Explore all services</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PRODUCTS -->
+    <section class="section">
+      <div class="container">
+        <div class="sectionHeader">
+          <h2 class="h2" data-animate>Featured Pieces</h2>
+          <p class="muted" data-animate>Curated highlights—availability and pricing updated by the showroom.</p>
+        </div>
+
+        <div class="productGrid" data-featured-products>
+          <!-- populated from Supabase -->
+          <div class="skeletonCard" aria-hidden="true"></div>
+          <div class="skeletonCard" aria-hidden="true"></div>
+          <div class="skeletonCard" aria-hidden="true"></div>
+          <div class="skeletonCard" aria-hidden="true"></div>
+        </div>
+
+        <div class="sectionFooter" data-animate>
+          <a class="btn btn--secondary" href="./shop.html">View Full Collection</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CASA DECOR -->
+    <section class="section section--contrast">
+      <div class="container">
+        <div class="sectionHeader">
+          <h2 class="h2" data-animate>Why Casa Decor</h2>
+          <p class="muted" data-animate>Designed to feel confident, calm, and premium—from selection to finishing.</p>
+        </div>
+
+        <div class="whyGrid" data-animate>
+          <div class="whyCard">
+            <div class="whyCard__title">Premium Materials</div>
+            <div class="whyCard__text">Quality-led selections across furniture and interior finishing elements.</div>
+          </div>
+          <div class="whyCard">
+            <div class="whyCard__title">Custom Designs</div>
+            <div class="whyCard__text">Fabric, colors, marble and dimensions tailored to your space and style.</div>
+          </div>
+          <div class="whyCard">
+            <div class="whyCard__title">Complete Home Solutions</div>
+            <div class="whyCard__text">Furniture + flooring + walls + ceilings + finishing—coordinated under one roof.</div>
+          </div>
+          <div class="whyCard">
+            <div class="whyCard__title">Professional Finishing</div>
+            <div class="whyCard__text">A showroom standard in detailing, alignment and final presentation.</div>
+          </div>
+          <div class="whyCard">
+            <div class="whyCard__title">Multiple Styles & Colors</div>
+            <div class="whyCard__text">Refined palettes and material options across modern and classic directions.</div>
+          </div>
+          <div class="whyCard">
+            <div class="whyCard__title">Consultation-led</div>
+            <div class="whyCard__text">Clear guidance to plan confidently—especially for complete home decoration.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CUSTOMIZATION -->
+    <section class="section">
+      <div class="container grid grid--2 grid--center">
+        <div class="imagePanel" data-animate>
+          <img src="./assets/images/placeholder-category.svg" alt="Fabric and material customization" loading="lazy" />
+        </div>
+        <div data-animate>
+          <h2 class="h2">Customization, refined.</h2>
+          <p class="muted">
+            Select pieces can be customized to complement your interior—fabric choices, colorways, marble options and dimensions.
+          </p>
+
+          <div class="customGrid">
+            <div class="customCard">Fabric</div>
+            <div class="customCard">Colors</div>
+            <div class="customCard">Marble</div>
+            <div class="customCard">Dimensions</div>
+            <div class="customCard">Styles</div>
+            <div class="customCard">Selected Interior Elements</div>
+          </div>
+
+          <div class="spacer-16"></div>
+          <button class="btn btn--primary" type="button" data-open-consultation>Request Customization</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONSULTATION CTA -->
+    <section class="section section--cta">
+      <div class="container ctaBand" data-animate>
+        <div>
+          <div class="ctaBand__kicker">Consultation</div>
+          <h2 class="ctaBand__title">Plan your space with clarity.</h2>
+          <p class="ctaBand__text">
+            Tell us what you’re furnishing or finishing. We’ll guide the next step—product selection, customization, or complete home decoration planning.
+          </p>
+        </div>
+        <div class="ctaBand__actions">
+          <button class="btn btn--primary" type="button" data-open-consultation>Book a Consultation</button>
+          <a class="btn btn--secondary" href="./contact.html">Send an Inquiry</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATION / CONTACT -->
+    <section class="section">
+      <div class="container grid grid--2 grid--center">
+        <div data-animate>
+          <h2 class="h2">Visit Casa Decor</h2>
+          <p class="muted">
+            <strong>Address</strong><br />
+            <span data-setting="address_full">Present 19, Shop number 25, Shopping Gallery, Bahria Town, Karachi, Pakistan</span>
+          </p>
+
+          <div class="contactRows">
+            <div class="contactRow">
+              <div class="contactRow__label">Phone</div>
+              <div class="contactRow__value" data-setting="phone_placeholder">Set in Admin → Settings</div>
+            </div>
+            <div class="contactRow">
+              <div class="contactRow__label">WhatsApp</div>
+              <div class="contactRow__value" data-setting="whatsapp_placeholder">Set in Admin → Settings</div>
+            </div>
+            <div class="contactRow">
+              <div class="contactRow__label">Email</div>
+              <div class="contactRow__value" data-setting="email_placeholder">Set in Admin → Settings</div>
+            </div>
+          </div>
+
+          <div class="spacer-16"></div>
+          <a class="btn btn--ghost" href="./contact.html">Open Contact Page</a>
+        </div>
+
+        <div class="mapShell" data-animate>
+          <div class="mapShell__header">
+            <div class="mapShell__title">Map</div>
+            <a class="textLink" href="./contact.html">Update map link in settings</a>
+          </div>
+          <div class="mapShell__body">
+            <!-- replaced by settings (embed html/link) in JS later -->
+            <div class="mapPlaceholder" aria-label="Map placeholder">
+              Google Maps embed/link will appear here after configuration.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="siteFooterMount"></footer>
+
+  <!-- Consultation / inquiry drawer (global) -->
+  <div class="drawer" data-drawer hidden>
+    <div class="drawer__backdrop" data-drawer-close aria-hidden="true"></div>
+    <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Inquiry">
+      <div class="drawer__header">
+        <div class="drawer__title">Send an Inquiry</div>
+        <button class="iconBtn" type="button" data-drawer-close aria-label="Close inquiry panel">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+
+      <form class="form" data-quick-inquiry-form>
+        <div class="field">
+          <label for="q_name">Name</label>
+          <input id="q_name" name="name" autocomplete="name" required />
+        </div>
+        <div class="field">
+          <label for="q_phone">Phone</label>
+          <input id="q_phone" name="phone" autocomplete="tel" required />
+        </div>
+        <div class="field">
+          <label for="q_email">Email (optional)</label>
+          <input id="q_email" name="email" type="email" autocomplete="email" />
+        </div>
+        <div class="field">
+          <label for="q_interested">Interested In</label>
+          <select id="q_interested" name="interested_in">
+            <option value="Consultation">Consultation</option>
+            <option value="Complete Home Decoration">Complete Home Decoration</option>
+            <option value="Furniture">Furniture</option>
+            <option value="Flooring">Flooring</option>
+            <option value="Wall Panels">Wall Panels</option>
+            <option value="Ceilings">Ceilings</option>
+            <option value="TV / Media Walls">TV / Media Walls</option>
+            <option value="Customization">Customization</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="q_message">Message</label>
+          <textarea id="q_message" name="message" rows="4" required placeholder="Tell us what you’re planning for your home."></textarea>
+        </div>
+
+        <button class="btn btn--primary btn--full" type="submit">Send Inquiry</button>
+        <p class="formNote muted">
+          WhatsApp button will appear when configured in Admin → Settings.
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toasts -->
+  <div class="toasts" id="toastMount" aria-live="polite" aria-relevant="additions"></div>
+
+  <!-- Structured data mounts (filled dynamically from settings) -->
+  <script type="application/ld+json" id="ld-organization">{}</script>
+
+  <noscript>
+    <div class="noscript">
+      This website requires JavaScript to load products and showroom data.
+    </div>
+  </noscript>
+
+  <script type="module" src="./assets/js/main.js"></script>
 </body>
 </html>

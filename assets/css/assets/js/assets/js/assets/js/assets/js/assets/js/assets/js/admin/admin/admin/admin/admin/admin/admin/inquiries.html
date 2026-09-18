@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inquiries — CASA DECOR Admin</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="stylesheet" href="../assets/css/admin.css" />
+</head>
+
+<body class="admin" data-admin-page="inquiries">
+  <div class="adminLayout">
+    <aside id="adminSidebar"></aside>
+
+    <div class="adminMain">
+      <header id="adminTopbar"></header>
+
+      <main class="adminContent">
+        <div class="pageHead">
+          <div>
+            <h1>Inquiries</h1>
+            <p class="muted">Review and manage customer messages from the website.</p>
+          </div>
+          <div class="pageHead__actions">
+            <button class="btn btn--secondary" type="button" data-refresh>Refresh</button>
+          </div>
+        </div>
+
+        <section class="panel">
+          <div class="panelHead panelHead--stack">
+            <div class="filters">
+              <div class="field">
+                <label for="q">Search</label>
+                <input id="q" type="search" placeholder="Search by name / phone / email / product…" />
+              </div>
+
+              <div class="field">
+                <label for="status">Status</label>
+                <select id="status">
+                  <option value="">All</option>
+                  <option value="new">New</option>
+                  <option value="contacted">Contacted</option>
+                  <option value="completed">Completed</option>
+                  <option value="archived">Archived</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="panelHead__meta">
+              <div class="pill"><span class="muted">Results</span> <strong data-count>—</strong></div>
+            </div>
+          </div>
+
+          <div class="panelBody">
+            <div class="tableWrap">
+              <table class="table" aria-label="Inquiries table">
+                <thead>
+                  <tr>
+                    <th style="width:26%">Customer</th>
+                    <th style="width:18%">Interested In</th>
+                    <th>Message</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                    <th style="width:16%">Actions</th>
+                  </tr>
+                </thead>
+                <tbody data-inquiries-tbody>
+                  <tr><td colspan="6" class="muted">Loading…</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="notice notice--error" data-error hidden></div>
+            <div class="notice notice--info" data-empty hidden>No inquiries yet.</div>
+          </div>
+        </section>
+
+        <!-- Inquiry view modal -->
+        <div class="modal" data-view-modal hidden>
+          <div class="modal__backdrop" data-view-close></div>
+          <div class="modal__panel modal__panel--wide" role="dialog" aria-modal="true" aria-label="Inquiry details">
+            <div class="modal__head">
+              <div class="modal__title">Inquiry</div>
+              <button class="iconBtn" type="button" data-view-close aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal__body" data-view-body></div>
+            <div class="modal__foot">
+              <button class="btn btn--secondary" type="button" data-view-close>Close</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Confirm modal -->
+        <div class="modal" data-modal hidden>
+          <div class="modal__backdrop" data-modal-close></div>
+          <div class="modal__panel" role="dialog" aria-modal="true" aria-label="Confirm action">
+            <div class="modal__head">
+              <div class="modal__title" data-modal-title>Confirm</div>
+              <button class="iconBtn" type="button" data-modal-close aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal__body" data-modal-body></div>
+            <div class="modal__foot">
+              <button class="btn btn--secondary" type="button" data-modal-cancel>Cancel</button>
+              <button class="btn btn--danger" type="button" data-modal-confirm>Confirm</button>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <div class="toasts" id="adminToastMount" aria-live="polite"></div>
+
+  <script type="module" src="../assets/js/admin.js"></script>
+  <script type="module" src="../assets/js/inquiries-admin.js"></script>
+</body>
+</html>

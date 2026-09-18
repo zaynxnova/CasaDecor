@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Settings — CASA DECOR Admin</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="stylesheet" href="../assets/css/admin.css" />
+</head>
+
+<body class="admin" data-admin-page="settings">
+  <div class="adminLayout">
+    <aside id="adminSidebar"></aside>
+
+    <div class="adminMain">
+      <header id="adminTopbar"></header>
+
+      <main class="adminContent">
+        <div class="pageHead">
+          <div>
+            <h1>Settings</h1>
+            <p class="muted">Edit business info, hero content, contact links, and footer text (no code changes required).</p>
+          </div>
+          <div class="pageHead__actions">
+            <button class="btn btn--primary" type="button" data-save>Save</button>
+          </div>
+        </div>
+
+        <div class="notice notice--error" data-error hidden></div>
+        <div class="notice notice--success" data-saved hidden>Saved.</div>
+
+        <section class="grid2 grid2--editor">
+          <section class="panel">
+            <div class="panelHead">
+              <div>
+                <div class="panelTitle">Business</div>
+                <div class="panelSub muted">Core showroom identity and location.</div>
+              </div>
+            </div>
+            <div class="panelBody">
+              <form class="form" id="settingsForm">
+                <details open class="formSection">
+                  <summary>Brand</summary>
+                  <div class="formGrid">
+                    <div class="field">
+                      <label for="business_name">Business name</label>
+                      <input id="business_name" placeholder="CASA DECOR" />
+                    </div>
+                    <div class="field">
+                      <label for="tagline">Tagline</label>
+                      <input id="tagline" placeholder="Complete Home Decoration & Interior Solutions" />
+                    </div>
+                    <div class="field">
+                      <label for="default_currency">Default currency</label>
+                      <select id="default_currency">
+                        <option value="PKR">PKR</option>
+                      </select>
+                    </div>
+                    <div class="field">
+                      <label for="business_hours">Business hours</label>
+                      <input id="business_hours" placeholder="Add hours (optional)" />
+                    </div>
+                  </div>
+                </details>
+
+                <details open class="formSection">
+                  <summary>Address</summary>
+                  <div class="formGrid">
+                    <div class="field">
+                      <label for="address_full">Full address</label>
+                      <textarea id="address_full" rows="3"></textarea>
+                    </div>
+                    <div class="field">
+                      <label for="address_short">Short address</label>
+                      <input id="address_short" placeholder="Bahria Town, Karachi" />
+                    </div>
+                    <div class="field">
+                      <label for="google_maps_embed_html">Google Maps embed HTML</label>
+                      <textarea id="google_maps_embed_html" rows="4" placeholder="Paste iframe embed code or leave blank."></textarea>
+                    </div>
+                    <div class="field">
+                      <label for="google_maps_link">Google Maps link</label>
+                      <input id="google_maps_link" placeholder="https://maps.google.com/..." />
+                    </div>
+                  </div>
+                </details>
+
+                <details open class="formSection">
+                  <summary>Contact & Social</summary>
+                  <div class="formGrid">
+                    <div class="field">
+                      <label for="phone">Phone</label>
+                      <input id="phone" placeholder="Set later" />
+                    </div>
+                    <div class="field">
+                      <label for="whatsapp_number">WhatsApp number</label>
+                      <input id="whatsapp_number" placeholder="Digits only recommended. Example: 923001234567" />
+                    </div>
+                    <div class="field">
+                      <label for="email">Email</label>
+                      <input id="email" type="email" placeholder="Set later" />
+                    </div>
+                    <div class="field">
+                      <label for="instagram_url">Instagram URL</label>
+                      <input id="instagram_url" placeholder="https://instagram.com/…" />
+                    </div>
+                    <div class="field">
+                      <label for="facebook_url">Facebook URL</label>
+                      <input id="facebook_url" placeholder="https://facebook.com/…" />
+                    </div>
+                    <div class="field">
+                      <label for="tiktok_url">TikTok URL</label>
+                      <input id="tiktok_url" placeholder="https://tiktok.com/@…" />
+                    </div>
+                  </div>
+                </details>
+
+                <details class="formSection">
+                  <summary>Footer</summary>
+                  <div class="formGrid">
+                    <div class="field">
+                      <label for="footer_text">Footer text</label>
+                      <textarea id="footer_text" rows="3" placeholder="Short brand statement."></textarea>
+                    </div>
+                  </div>
+                </details>
+
+                <details class="formSection">
+                  <summary>Hero</summary>
+                  <div class="formGrid">
+                    <div class="field">
+                      <label for="hero_eyebrow">Hero eyebrow</label>
+                      <input id="hero_eyebrow" placeholder="INTERIORS • FURNITURE • DECOR" />
+                    </div>
+                    <div class="field">
+                      <label for="hero_title">Hero title</label>
+                      <input id="hero_title" placeholder="Complete Home Decoration" />
+                    </div>
+                    <div class="field">
+                      <label for="hero_subtitle">Hero subtitle</label>
+                      <textarea id="hero_subtitle" rows="3"></textarea>
+                    </div>
+                  </div>
+                </details>
+              </form>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="panelHead">
+              <div>
+                <div class="panelTitle">Hero image</div>
+                <div class="panelSub muted">Upload/replace the main homepage hero image.</div>
+              </div>
+            </div>
+            <div class="panelBody">
+              <div class="uploadBox">
+                <input id="heroImageInput" type="file" accept="image/*" />
+                <button class="btn btn--secondary" type="button" data-upload>Upload hero image</button>
+                <div class="help muted">Stored in Supabase Storage and linked as <code>hero_image_path</code>.</div>
+              </div>
+
+              <div class="imagePreview" data-hero-preview hidden>
+                <img alt="Hero image preview" />
+                <button class="btn btn--danger btn--sm" type="button" data-remove-hero>Remove hero image</button>
+              </div>
+
+              <div class="notice notice--error" data-upload-error hidden></div>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <div class="toasts" id="adminToastMount" aria-live="polite"></div>
+
+  <script type="module" src="../assets/js/admin.js"></script>
+  <script type="module" src="../assets/js/settings-admin.js"></script>
+</body>
+</html>

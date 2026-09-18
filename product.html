@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Product — CASA DECOR</title>
+  <meta name="description" content="Explore product details, specifications, customization options, and inquiries." />
+  <meta name="theme-color" content="#070708" />
+
+  <link rel="canonical" href="" data-canonical />
+  <meta property="og:title" content="Product — CASA DECOR" data-og-title />
+  <meta property="og:description" content="Luxury furniture & interior solutions." data-og-description />
+  <meta property="og:type" content="product" />
+  <meta property="og:image" content="./assets/images/placeholder-product.svg" data-og-image />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body class="theme-dark" data-page="product">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header id="siteHeaderMount"></header>
+
+  <main id="main">
+    <section class="section section--tight">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="./index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="./shop.html">Collection</a>
+          <span aria-hidden="true">/</span>
+          <span data-breadcrumb-current>Product</span>
+        </nav>
+
+        <div class="notice notice--error" data-product-error hidden></div>
+
+        <div class="productShell" data-product-shell hidden>
+          <div class="productGallery" aria-label="Product image gallery">
+            <div class="productGallery__main">
+              <img data-main-image src="./assets/images/placeholder-product.svg" alt="Product image" loading="eager" />
+            </div>
+            <div class="productGallery__thumbs" data-thumbs aria-label="Thumbnails"></div>
+          </div>
+
+          <div class="productInfo">
+            <div class="productInfo__top">
+              <div class="badgeRow" data-badges></div>
+              <h1 class="h1 productTitle" data-product-name>—</h1>
+              <p class="muted productMeta">
+                <span data-product-category>—</span>
+                <span class="dot" aria-hidden="true">•</span>
+                <span data-product-availability>—</span>
+              </p>
+
+              <div class="priceBlock" data-price></div>
+
+              <div class="saleCountdown" data-sale-countdown hidden>
+                <div class="saleCountdown__label">Offer ends in</div>
+                <div class="saleCountdown__grid" aria-label="Sale countdown timer">
+                  <div><div class="num" data-cd-days>0</div><div class="lab">Days</div></div>
+                  <div><div class="num" data-cd-hours>0</div><div class="lab">Hours</div></div>
+                  <div><div class="num" data-cd-min>0</div><div class="lab">Minutes</div></div>
+                  <div><div class="num" data-cd-sec>0</div><div class="lab">Seconds</div></div>
+                </div>
+              </div>
+
+              <div class="actionRow">
+                <button class="btn btn--primary" type="button" data-inquire-product>Ask About This Product</button>
+                <a class="btn btn--secondary" href="./contact.html">Request a Quote</a>
+                <button class="btn btn--ghost" type="button" data-whatsapp-product hidden>WhatsApp Us</button>
+              </div>
+
+              <div class="divider" aria-hidden="true"></div>
+            </div>
+
+            <div class="productInfo__body">
+              <section class="infoBlock" data-desc-block hidden>
+                <h2 class="h3">Description</h2>
+                <div class="richText" data-product-description></div>
+              </section>
+
+              <section class="infoBlock" data-spec-block hidden>
+                <h2 class="h3">Specifications</h2>
+                <dl class="specList" data-product-specs></dl>
+              </section>
+
+              <section class="infoBlock" data-custom-block hidden>
+                <h2 class="h3">Customization Available</h2>
+                <div class="optionGroups" data-product-options></div>
+              </section>
+            </div>
+          </div>
+        </div>
+
+        <section class="section section--tight">
+          <div class="sectionHeader">
+            <h2 class="h2">Related Products</h2>
+            <p class="muted">Explore more from the collection.</p>
+          </div>
+          <div class="productGrid" data-related-grid>
+            <div class="skeletonCard" aria-hidden="true"></div>
+            <div class="skeletonCard" aria-hidden="true"></div>
+            <div class="skeletonCard" aria-hidden="true"></div>
+            <div class="skeletonCard" aria-hidden="true"></div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer id="siteFooterMount"></footer>
+
+  <div class="drawer" data-drawer hidden>
+    <div class="drawer__backdrop" data-drawer-close aria-hidden="true"></div>
+    <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Inquiry">
+      <div class="drawer__header">
+        <div class="drawer__title">Product Inquiry</div>
+        <button class="iconBtn" type="button" data-drawer-close aria-label="Close inquiry panel">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+
+      <form class="form" data-quick-inquiry-form>
+        <input type="hidden" name="product_slug" data-inquiry-product-slug />
+        <div class="field">
+          <label>Product</label>
+          <input name="product_name" data-inquiry-product-name readonly />
+        </div>
+        <div class="field">
+          <label for="p_name">Name</label>
+          <input id="p_name" name="name" autocomplete="name" required />
+        </div>
+        <div class="field">
+          <label for="p_phone">Phone</label>
+          <input id="p_phone" name="phone" autocomplete="tel" required />
+        </div>
+        <div class="field">
+          <label for="p_email">Email (optional)</label>
+          <input id="p_email" name="email" type="email" autocomplete="email" />
+        </div>
+        <div class="field">
+          <label for="p_message">Message</label>
+          <textarea id="p_message" name="message" rows="4" required></textarea>
+        </div>
+
+        <button class="btn btn--primary btn--full" type="submit">Send Inquiry</button>
+        <button class="btn btn--ghost btn--full" type="button" data-whatsapp-product hidden>WhatsApp Us</button>
+        <p class="formNote muted">WhatsApp appears after configuration in Admin → Settings.</p>
+      </form>
+    </div>
+  </div>
+
+  <div class="toasts" id="toastMount" aria-live="polite" aria-relevant="additions"></div>
+
+  <script type="application/ld+json" id="ld-product">{}</script>
+
+  <script type="module" src="./assets/js/main.js"></script>
+  <script type="module" src="./assets/js/product.js"></script>
+</body>
+</html>
